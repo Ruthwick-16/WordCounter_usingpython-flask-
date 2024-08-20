@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Counter Results</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #36d1dc, #5b86e5);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Word Counter Results</h1>
+        <p>Total Words: {{ word_count }}</p>
+        <div class="result">
+            <h2>Word Frequencies:</h2>
+            <ul>
+                {% for word, count in word_frequency.items() %}
+                    <li>{{ word }}: {{ count }}</li>
+                {% endfor %}
+            </ul>
+            <a href="/"><button type="button">Try Again</button></a>
+        </div>
+    </div>
+</body>
+</html>
